@@ -160,19 +160,9 @@ def run_bot():
         await interaction.response.defer()
         await asyncio.sleep(1)
         data = {
-                "prompt": message + ",masterpiece, best quality, ultra-detailed, 4k, best lighting, cinematic",
-                "batch_size": 1,
-                "n_iter": 1,
-                "steps": 20,
-                "cfg_scale": 7,
-                "width": 512,
-                "height": 512,
-                "negative_prompt": "(worst quality, low quality:1.4),",
-                "override_settings": {},
-                "override_settings_restore_afterwards": True,
-                "sampler_index": "Euler",
+                "#",
                 }
-        response_z = requests.post(url='http://127.0.0.1:7860/sdapi/v1/txt2img', json=data)
+        response_z = requests.post(url='#', json=data)
         r = response_z.json()
         
         if 'images' in r:
