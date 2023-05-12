@@ -13,7 +13,7 @@ import ytdl
 import os
 import ffmpeg
 
-os.environ['API_KEY'] = "AIzaSyAPlXWGgwJbY2SGeSaBUS-5TmqkGMLEAmg"
+os.environ['API_KEY'] = "#"
 youtube = googleapiclient.discovery.build("youtube", "v3", developerKey = os.environ["API_KEY"])
 
 
@@ -25,7 +25,7 @@ async def send_message(message, user_message, is_private):
         print(e)
 
 def run_bot():
-    TOKEN = 'MTA1NTk1NzM0Njk4NTE4OTUyOA.GZ2Frh.Mz9LfTVaD64_800gBrHUmdaA-kqf8tv7GbvVi8'
+    TOKEN = '#'
     intents = discord.Intents.default()
     intents.message_content = True
 
@@ -136,7 +136,7 @@ def run_bot():
             filename = ydl.prepare_filename(info)
 
 
-        source = discord.FFmpegPCMAudio(executable = "C:/Users/matth/pathff/ffmpeg.exe", source = filename)
+        source = discord.FFmpegPCMAudio(executable = "pathto/ffmpeg.exe", source = filename)
         if voice_client.is_playing():
             voice_client.source = source
         else:
